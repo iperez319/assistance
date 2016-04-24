@@ -1,0 +1,18 @@
+<ion-view title="Jobs">
+
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <form class="list">
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="search" placeholder="Search by title" ng-model="searchText">
+            </label>
+        </form>
+        <ion-list>
+            <ion-item ui-sref="tabsController.jobDetail" ng-repeat="j in jobs | filter:searchText" ng-click="click(j)">{{j.text}}</ion-item>
+        </ion-list>
+    </ion-content>
+
+    <ion-nav-buttons side="right">
+    <button class="button icon ion-plus-round button-positive" style="border:0" ui-sref="tabsController.addJob"></button>
+    </ion-nav-back-button>
+</ion-view>

@@ -1,0 +1,25 @@
+<ion-view title="Job Detail">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+      <label class="item item-input">
+          <span class="input-label">Description:</span>
+          <input type="text" ng-model="description" readonly style="background-color: #FFFFFF">
+      </label>
+
+        <div class="list card">
+            <div class="item item-divider">Assigned Members</div>
+            <div class="item item-body">
+
+                <ion-list>
+                    <ion-item ng-repeat="s in assigned">{{s.split('-')[0]}}</ion-item>
+                </ion-list>
+            </div>
+        </div>
+      <ion-checkbox readonly>Completed</ion-checkbox>
+        <div class="button-bar">
+            <button class="button button-assertive button-block ">Delete</button>
+            <button class="button button-light button-clear button-small"></button>
+            <a ui-sref="tabsController.job" class="button button-positive button-block ">Edit</a>
+        </div>
+
+    </ion-content>
+</ion-view>

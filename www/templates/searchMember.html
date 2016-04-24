@@ -1,0 +1,18 @@
+<ion-view title="Search Member">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <form class="list">
+            <label class="item item-input" name="nameSearchBar">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="search" placeholder="Search by name">
+            </label>
+            <label class="item item-select" name="gradeSearch">
+                <span class="input-label">Specific Grade</span>
+                <select></select>
+            </label>
+        </form>
+        <div class="button-bar"></div>
+        <ion-list>
+            <ion-item ng-repeat="m in members" ng-click="onClick(m)">{{m.text}}</ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

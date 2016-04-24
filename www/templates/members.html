@@ -1,0 +1,27 @@
+<ion-view title="Members">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <form class="list">
+            <label class="item item-input" name="nameSearchBar">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="search" placeholder="Search by name" ng-model="searchText">
+            </label>
+            <label class="item item-select" name="gradeSearch">
+                <span class="input-label">Specific Grade</span>
+                <select ng-model="selectedGrade">
+                    <option value="None"></option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+
+                </select>
+            </label>
+        </form>
+        <div class="button-bar"></div>
+        <ion-list>
+            <ion-item ng-repeat="m in members | filter:searchText" ng-click="click(m)">{{m.text}}</ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

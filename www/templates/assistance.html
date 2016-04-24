@@ -1,0 +1,28 @@
+<ion-view title="Assistance">
+    <ion-content overflow-scroll="true" padding="true" class="has-header" ng-show="showPage">
+
+        <h3 style="text-align:center">{{date}}</h3>
+        <br>
+        <ion-list>
+            <ion-item class="item-divider">Workers</ion-item>
+            <ion-checkbox name="checkboxes"  ng-repeat="w in workers" ng-class="{'checkbox-balanced': w.excused}" ng-model="w.selected" on-hold="hold(w)">{{w.text}}</ion-checkbox>
+            <ion-item class="item-divider">Presenters</ion-item>
+            <ion-checkbox ng-repeat="p in presenters"  ng-class="{'checkbox-balanced': p.excused}" ng-model="p.selected" on-hold="hold(p)">{{p.text}}</ion-checkbox>
+            <ion-item class="item-divider">Permanents</ion-item>
+            <ion-checkbox name="checkboxes" ng-repeat="pe in permanents" ng-class="{'checkbox-balanced': pe.excused}" ng-model="pe.selected" on-hold="hold(pe)">{{pe.text}}</ion-checkbox>
+            <ion-item class="item-divider" ng-show="extras.length > 0">Extras</ion-item>
+            <ion-item name="items" ng-repeat="e in extras" on-hold="delete(e)">{{e.text}}</ion-item>
+        </ion-list>
+        <a ui-sref="tabsController.searchMember" class="button button-balanced button-block button-large icon-left ion-plus">Add Member</a>
+        <button class="button button-positive button-block button-large icon-left ion-android-send" ng-click="submit()">Submit</button>
+    </ion-content>
+    <ion-content ng-show="!showPage">
+
+<br>
+<br>
+      <h3 style="text-align:center">{{date}}</h3>
+      <br>
+      <h4 style="text-align:center">No assistance today</h4>
+
+    </ion-content>
+</ion-view>

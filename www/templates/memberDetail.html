@@ -1,0 +1,58 @@
+<ion-view title="Member Detail">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+      <div class="list card">
+          <div class="item item-divider">Info</div>
+          <div class="item item-body">
+              <label class="item item-input">
+                  <span class="input-label">Name:</span>
+                  <input type="text" ng-model="name" ng-change="isChanged = true">
+              </label>
+              <label class="item item-input">
+                  <span class="input-label">Grade:</span>
+                  <input type="text" ng-model="grade" ng-change="isChanged = true">
+              </label>
+              <label class="item item-input">
+                  <span class="input-label">Homeroom:</span>
+                  <input type="text" ng-model="homeroom" ng-change="isChanged = true">
+              </label>
+              <label class="item item-input">
+                  <span class="input-label">Email:</span>
+                  <input type="text" ng-model="email" ng-change="isChanged = true">
+              </label>
+              <label class="item item-input">
+                  <span class="input-label">Phone Number:</span>
+                  <input type="text" ng-model="phone" ng-change="isChanged = true">
+              </label>
+              <label class="item item-input">
+                  <span class="input-label">Presenter:</span>
+                <ion-checkbox style="border:0px solid" ng-model="isPresenter" ng-change="isChanged = true"></ion-checkbox>
+              </label>
+<a ng-click="update()" class="button button-positive button-block button-large icon-left ion-loop" ng-show="isChanged">Update</a>
+
+          </div>
+      </div>
+
+        <div class="list card" ng-show="showAssistance">
+            <div class="item item-divider">Assistance</div>
+            <div class="item item-body">
+              <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels" chart-colours="['#568BBF', '#20B055', '#9FB5C4', '#CF5A1F']"></canvas>
+            </div>
+        </div>
+        <div class="list card">
+            <div class="item item-divider">Jobs</div>
+            <div class="item item-body">
+                <div class="list card">
+                    <div class="item item-body">
+                        <h1>Radar Graph Goes Here</h1>
+                    </div>
+                </div>
+                <ion-list>
+                    <ion-item>Item 1</ion-item>
+                    <ion-item>Item 2</ion-item>
+                    <ion-item>Item 3</ion-item>
+                </ion-list>
+                <a ui-sref="tabsController.job2" class="button button-balanced button-block button-large icon-left ion-ios-plus-empty">Add Job</a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
